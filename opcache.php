@@ -458,19 +458,19 @@ $dataModel = new OpCacheDataModel();
             cursor: pointer;
         }
     </style>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
         var hidden = {};
         function toggleVisible(head, row) {
             if (!hidden[row]) {
-                d3.selectAll(row).transition().style('display', 'none');
+								$(row).hide();
                 hidden[row] = true;
-                d3.select(head).transition().style('color', '#ccc');
+								$(head).css('color','#ccc');
             } else {
-                d3.selectAll(row).transition().style('display');
+								$(row).show();
                 hidden[row] = false;
-                d3.select(head).transition().style('color', '#000');
+								$(head).css('color','#000');
             }
         }
     </script>
